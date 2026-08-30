@@ -3,8 +3,8 @@
     "titre": "Ce qu'on entend sur l'IA, ce que les études disent",
     "cadrage": "Cinq idées qui circulent sur les effets de l'IA sur notre pensée, confrontées aux études disponibles. Chaque carte s'ouvre sur ce qu'on en sait, puis sur ses sources et leurs limites.",
     "corpus_arrete_le": "2026-08-10",
-    "recherche_source": "Enquête documentaire sur 32 sources, arrêtée au 10 août 2026. Une source peut avoir été corrigée ou rétractée depuis.",
-    "ancrage_run": "carte.md de l'enquête, runs 2026-08-10-nouveau-01 et 2026-08-30-ancrage-01"
+    "recherche_source": "Enquête documentaire sur 32 sources.",
+    "ancrage_run": "carte.md de l'enquête, runs 2026-08-10-nouveau-01, 2026-08-30-ancrage-01 et 2026-08-30-ancrage-02"
   },
   "cartes": [
     {
@@ -84,7 +84,7 @@
       "type": "lieu_commun",
       "enonce": "Les scanners montrent un cerveau en vacances quand on écrit avec ChatGPT",
       "verdict": "L'autrice de l'étude dément elle-même cette lecture : son travail, dit-elle, ne peut pas montrer et n'a pas montré de bêtise dans le cerveau, pas de stupidité, pas de cerveau en vacances.",
-      "developpement": "L'étude du MIT Media Lab mesure, chez 54 personnes rédigeant un essai, la connectivité de leur cerveau, c'est-à-dire le nombre de connexions actives repérées entre ses différentes zones. Les participants sont répartis en trois groupes de 18 selon l'outil autorisé. C'est un texte mis en ligne par ses auteurs, que d'autres chercheurs n'ont pas encore contrôlé.\n\nLe résultat le plus net porte sur la mémoire immédiate du texte écrit : aucun des 18 participants ayant utilisé un assistant conversationnel n'a produit de citation correcte de son propre essai.\n\nL'autre résultat, celui qui alimente l'idée d'un cerveau à l'arrêt, montre cette connectivité diminuer à mesure que le soutien extérieur augmente, du groupe sans outil au groupe moteur de recherche puis au groupe assistant. Il est disputé. Des chercheurs extérieurs calculent qu'il aurait fallu environ 159 personnes, et non 54, pour être sûrs que cette baisse n'est pas due au hasard. Ils relèvent aussi que l'écart entre le groupe moteur de recherche et le groupe sans outil n'est pas net, à la différence du groupe assistant. L'autrice ajoute qu'une connectivité plus forte n'est en soi ni bonne ni mauvaise : elle peut signer un engagement plus profond dans la tâche comme une pensée moins efficace.\n\nUne seconde étude indépendante, sur la programmation assistée, retrouve un signal comparable mais faible, non confirmé sur une seconde tâche.",
+      "developpement": "L'étude du MIT Media Lab mesure, chez 54 personnes rédigeant un essai, la connectivité de leur cerveau, c'est-à-dire le nombre de connexions actives repérées entre ses différentes zones. Les participants sont répartis en trois groupes de 18 selon l'outil autorisé. C'est un texte mis en ligne par ses auteurs, que d'autres chercheurs n'ont pas encore contrôlé.\n\nLe résultat le plus net porte sur la mémoire immédiate du texte écrit : aucun des 18 participants ayant utilisé un assistant conversationnel n'a produit de citation correcte de son propre essai.\n\nL'autre résultat, celui qui alimente l'idée d'un cerveau à l'arrêt, montre cette connectivité diminuer à mesure que le soutien extérieur augmente, du groupe sans outil au groupe moteur de recherche puis au groupe assistant. Il est disputé. Des chercheurs extérieurs calculent qu'il aurait fallu environ 159 personnes, et non 54, pour être sûrs que cette baisse n'est pas due au hasard. Ils relèvent aussi que, sur la tâche de citation, l'écart entre le groupe moteur de recherche et le groupe sans outil n'est pas net, à la différence du groupe assistant. L'autrice ajoute qu'une connectivité plus forte n'est en soi ni bonne ni mauvaise : elle peut signer un engagement plus profond dans la tâche comme une pensée moins efficace.\n\nUne seconde étude indépendante, sur la programmation assistée, retrouve un signal comparable mais faible, non confirmé sur une seconde tâche.",
       "ancrage": [
         "S20a",
         "S20b",
@@ -215,7 +215,9 @@
         "S31b",
         "S32a",
         "S32b",
-        "S32c"
+        "S32c",
+        "S54",
+        "S55"
       ],
       "sources": [
         {
@@ -301,7 +303,7 @@
       "type": "resultat",
       "enonce": "Alors, qu'est-ce qui tient ?",
       "verdict": "L'IA générative améliore ce qu'on produit avec elle, mais pas ce qu'on retient une fois qu'elle est retirée : trois expériences indépendantes le montrent. Dans la plus solide, l'écart disparaît quand l'IA se limite à indiquer une piste plutôt qu'à donner la réponse.",
-      "developpement": "Trois expériences indépendantes, dans trois pays et trois disciplines, montrent le même décalage : l'IA générative améliore ce qu'on produit avec elle, pas ce qu'on retient sans elle.\n\nLa plus solide s'est déroulée dans un grand lycée turc, auprès de près de mille élèves. Ceux qui avaient utilisé un assistant sans restriction obtiennent, à l'examen final passé sans aide, un score inférieur de 17 % à celui du groupe sans IA. Avec la même IA réglée pour donner des indices au lieu de la réponse, la différence devient trop petite pour qu'on puisse la distinguer du hasard. Ce n'est donc pas l'IA qui coûte cher, mais la réponse livrée sans détour.\n\nÀ Munich, ni l'assistant libre ni la version guidée n'améliorent la compréhension ou les connaissances acquises, mais les deux réduisent la frustration et l'effort mental ressenti. Le confort est réel, l'apprentissage non. Un test surprise passé 45 jours après l'apprentissage donne 57,5 % de bonnes réponses au groupe ayant travaillé avec ChatGPT, contre 68,5 % au groupe qui avait étudié sans.\n\nLe dossier porte aussi un contrepoint. À Harvard, un tuteur conçu selon des principes pédagogiques fait nettement mieux apprendre 194 étudiants en physique qu'une séance en classe, avantage important même dans son estimation la plus prudente. Trois réserves l'accompagnent : les auteurs sont concepteurs et évaluateurs du même tuteur, bien qu'ils déclarent n'avoir aucun conflit d'intérêts ; la comparaison n'incluait aucun assistant ordinaire, seulement une séance en classe ; et la maîtrise était mesurée juste après la leçon, sans rien vérifier à distance. Ce résultat dit qu'un tuteur bien conçu bat une heure de cours, pas qu'un assistant conversationnel ordinaire fait apprendre.\n\nTrois limites, enfin. Aucune étude ne mesure d'effet au-delà de 45 jours, personne ne sait donc si ce décalage se comble, s'installe ou s'aggrave. L'expérience turque n'a été refaite par aucune équipe indépendante. Et chacune des trois a son point faible : un établissement et une matière pour la première, quatre-vingt-dix minutes sur un seul concept pour la deuxième, une université et beaucoup d'abandons pour la troisième, dont l'auteur recrutait dans son propre cours.",
+      "developpement": "Trois expériences indépendantes, dans trois pays et trois disciplines, montrent le même décalage : l'IA générative améliore ce qu'on produit avec elle, pas ce qu'on retient sans elle.\n\nLa plus solide s'est déroulée dans un grand lycée turc, auprès de près de mille élèves. Ceux qui avaient utilisé un assistant sans restriction obtiennent, à l'examen final passé sans aide, un score inférieur de 17 % à celui du groupe sans IA. Avec la même IA réglée pour donner des indices au lieu de la réponse, la différence devient trop petite pour qu'on puisse la distinguer du hasard. Ce n'est donc pas l'IA qui coûte cher, mais la réponse livrée sans détour.\n\nÀ Munich, ni l'assistant libre ni la version guidée n'améliorent la compréhension ou les connaissances acquises, mais les deux réduisent la frustration et l'effort mental ressenti, sans toucher à la charge que la tâche impose elle-même. Le confort est réel, l'apprentissage non. Un test surprise passé 45 jours après l'apprentissage donne 57,5 % de bonnes réponses au groupe ayant travaillé avec ChatGPT, contre 68,5 % au groupe qui avait étudié sans.\n\nLe dossier porte aussi un contrepoint. À Harvard, un tuteur conçu selon des principes pédagogiques fait nettement mieux apprendre 194 étudiants en physique qu'une séance en classe, avantage important même dans son estimation la plus prudente. Trois réserves l'accompagnent : les auteurs sont concepteurs et évaluateurs du même tuteur, bien qu'ils déclarent n'avoir aucun conflit d'intérêts ; la comparaison n'incluait aucun assistant ordinaire, seulement une séance en classe ; et la maîtrise était mesurée juste après la leçon, sans rien vérifier à distance. Ce résultat dit qu'un tuteur bien conçu bat une heure de cours, pas qu'un assistant conversationnel ordinaire fait apprendre.\n\nTrois limites, enfin. Aucune étude ne mesure d'effet au-delà de 45 jours, personne ne sait donc si ce décalage se comble, s'installe ou s'aggrave. L'expérience turque n'a été refaite par aucune équipe indépendante. Et chacune des trois a son point faible : un établissement et une matière pour la première, quatre-vingt-dix minutes sur un seul concept pour la deuxième, une université et beaucoup d'abandons pour la troisième, dont l'auteur recrutait dans son propre cours.",
       "ancrage": [
         "S10a",
         "S10b",
@@ -312,7 +314,9 @@
         "S16b",
         "S17",
         "S18",
-        "S19"
+        "S19",
+        "S56",
+        "S57"
       ],
       "sources": [
         {

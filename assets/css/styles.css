@@ -1,0 +1,453 @@
+/* ============================================================
+   Ce qu'on entend sur l'IA, ce que les études disent
+   Charte rétrofuturisme_site — Anton / Oswald / Inter en local
+   ============================================================ */
+
+/* ---------- Polices locales ---------- */
+/* Oswald et Inter sont des fichiers variables : un seul fichier
+   par famille couvre toute la plage de poids. */
+@font-face {
+  font-family: 'Anton';
+  src: url('../fonts/anton_regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/oswald_variable.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter_variable.woff2') format('woff2');
+  font-weight: 400 600;
+  font-display: swap;
+}
+
+/* ---------- Palette ---------- */
+:root {
+  --retro-teal:   #127676;
+  --retro-orange: #E4632E;
+  --retro-jaune:  #E3A535;
+  --retro-ink:    #0D1617;
+  --retro-paper:  #F2EFE6;
+}
+
+/* ---------- Fond et cadre global ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.7;
+  color: var(--retro-ink);
+  background-image: url('../img/fond_art_nouveau.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.page-frame {
+  background: var(--retro-paper);
+  border: 3px solid var(--retro-orange);
+  box-shadow: inset 0 0 0 2px var(--retro-teal);
+  border-radius: 24px 8px 24px 8px;
+  margin: 16px;            /* mobile d'abord : le fond Art Nouveau reste visible */
+  min-height: calc(100vh - 32px);
+  overflow: clip;
+}
+@media (min-width: 640px)  { .page-frame { margin: 40px;  min-height: calc(100vh - 80px); } }
+@media (min-width: 1024px) { .page-frame { margin: 120px; min-height: calc(100vh - 240px); } }
+
+/* ---------- En-tête ---------- */
+.entete {
+  padding: 2.5rem 1.5rem 0;
+}
+@media (min-width: 640px) { .entete { padding: 3.5rem 3rem 0; } }
+
+.entete h1 {
+  font-family: 'Anton', 'Oswald', sans-serif;
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--retro-teal);
+  margin: 0 0 1rem;
+}
+
+.cadrage {
+  max-width: 42rem;
+  margin: 0 0 1.25rem;
+  font-size: 1.0625rem;
+}
+
+.provenance {
+  font-size: 0.875rem;
+  color: rgba(13,22,23,0.7);
+  margin: 0.75rem 0 2.5rem;
+}
+
+/* ---------- Corps de page ---------- */
+.corps {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+@media (min-width: 640px) { .corps { padding: 0 2rem 4rem; } }
+
+.attente {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--retro-teal);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* ---------- Cartes ---------- */
+.carte {
+  position: relative;
+  background: var(--retro-paper);
+  border: 3px solid var(--retro-teal);
+  margin: 0 0 1.25rem;
+  transition: box-shadow 0.25s ease;
+}
+
+/* Lieu commun : forme secondaire, diagonale inverse de la carte finale */
+.carte.lieu_commun {
+  border-radius: 8px 24px 8px 24px;
+  box-shadow: inset 0 0 0 2px var(--retro-orange);
+}
+.carte.lieu_commun:hover {
+  box-shadow: inset 0 0 0 2px var(--retro-orange), 0 12px 32px rgba(18,118,118,0.25);
+}
+
+/* Carte finale : forme principale */
+.carte.resultat {
+  border-radius: 24px 8px 24px 8px;
+  box-shadow: inset 0 0 0 3px var(--retro-orange);
+  margin-top: 2.5rem;
+}
+.carte.resultat:hover {
+  box-shadow: inset 0 0 0 3px var(--retro-orange), 0 12px 32px rgba(18,118,118,0.25);
+}
+
+/* Ornements de coin : réservés à la carte finale, variante C */
+.ornement {
+  position: absolute;
+  color: var(--retro-teal);
+  opacity: 0.6;
+  pointer-events: none;
+  width: 36px;
+  height: 36px;
+}
+.ornement.coin-haut-gauche     { top: 8px;  left: 8px; }
+.ornement.coin-haut-droit      { top: 8px;  right: 8px;  transform: scaleX(-1); }
+.ornement.coin-bas-gauche      { bottom: 8px; left: 8px;  transform: scaleY(-1); }
+.ornement.coin-bas-droit       { bottom: 8px; right: 8px; transform: scale(-1); }
+@media (min-width: 640px)  { .ornement { width: 44px; height: 44px; } }
+@media (min-width: 1024px) { .ornement { width: 50px; height: 50px; } }
+
+/* ---------- En-tête de carte (summary) ---------- */
+.carte summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+  padding: 1.1rem 1.25rem;
+  min-height: 44px;             /* zone tactile charte */
+}
+.carte summary::-webkit-details-marker { display: none; }
+.carte summary:focus-visible {
+  outline: 3px solid var(--retro-orange);
+  outline-offset: 2px;
+}
+
+/* Le marqueur est posé en absolu pour ne pas déplacer le texte à l'ouverture */
+.carte summary::after {
+  content: '▸';
+  position: absolute;
+  right: 1.25rem;
+  bottom: 0.9rem;
+  font-size: 1.1rem;
+  color: var(--retro-teal);
+  transition: transform 0.2s ease;
+}
+.carte[open] summary::after { transform: rotate(90deg); }
+/* La carte finale porte son marqueur au-dessus des ornements */
+.carte.resultat summary::after { right: 3.25rem; }
+
+.sur-titre {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--retro-teal);
+  margin-bottom: 0.25rem;
+}
+
+.enonce {
+  display: block;
+  font-family: 'Anton', 'Oswald', sans-serif;
+  font-size: clamp(1.25rem, 3.5vw, 1.6rem);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--retro-ink);
+  padding-right: 2.5rem;        /* ne pas passer sous le marqueur */
+}
+
+.appel {
+  display: block;
+  font-size: 0.875rem;
+  color: rgba(13,22,23,0.7);     /* caption charte : ink 70 % */
+  margin-top: 0.35rem;
+}
+
+/* ---------- Contenu ouvert ---------- */
+.carte-corps {
+  padding: 0.25rem 1.5rem 1.5rem;
+}
+@media (min-width: 640px) { .carte-corps { padding: 0.25rem 2rem 1.75rem; } }
+
+.verdict {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  border-top: 3px solid var(--retro-orange);
+  padding-top: 1rem;
+  margin: 0;
+}
+.carte.resultat .verdict { border-top-width: 4px; }
+
+/* ---------- Second niveau : développement et sources ---------- */
+.profondeur {
+  margin-top: 1.25rem;
+  border-top: 2px solid var(--retro-teal);
+}
+
+.profondeur > summary {
+  list-style: none;
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--retro-teal);
+}
+.profondeur > summary::-webkit-details-marker { display: none; }
+.profondeur > summary::before {
+  content: '▸';
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+.profondeur[open] > summary::before { transform: rotate(90deg); }
+.profondeur > summary:focus-visible {
+  outline: 3px solid var(--retro-orange);
+  outline-offset: 2px;
+}
+
+.developpement p { margin: 0 0 1rem; }
+.developpement p:last-child { margin-bottom: 0; }
+
+/* ---------- Sources ---------- */
+.sources {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.source {
+  border-top: 2px solid var(--retro-teal);
+  padding: 0.9rem 0 1.1rem;
+}
+
+.source-titre {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+}
+.source-titre a {
+  color: var(--retro-teal);
+  text-decoration: underline;
+  text-decoration-color: rgba(18,118,118,0.4);
+  text-underline-offset: 3px;
+}
+.source-titre a:hover { text-decoration-color: var(--retro-teal); }
+
+.source-meta {
+  margin: 0.15rem 0 0.5rem;
+  font-size: 0.9375rem;
+  color: rgba(13,22,23,0.7);
+}
+
+/* Avertissement : un mot en clair porte l'état, la couleur ne le dit jamais seule */
+.avertissement {
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  border-left: 4px solid var(--retro-orange);
+  background: rgba(13,22,23,0.05);
+}
+.avertissement strong {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 0.35rem;
+}
+
+.limite {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+}
+.limite::before {
+  content: 'Limite : ';
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.875rem;
+  color: var(--retro-teal);
+}
+
+/* ---------- Message d'échec du chargement ---------- */
+.message-echec {
+  border: 3px solid var(--retro-orange);
+  border-radius: 8px 24px 8px 24px;
+  box-shadow: inset 0 0 0 2px var(--retro-teal);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+.message-echec h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--retro-teal);
+  margin: 0 0 0.75rem;
+}
+.message-echec button {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--retro-paper);
+  background: var(--retro-teal);
+  border: none;
+  border-radius: 8px 8px 8px 8px;
+  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+.message-echec button:hover { background: #0e5f5f; }
+
+/* ---------- Bloc sans script ---------- */
+.sans-script h1 {
+  font-family: 'Anton', 'Oswald', sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--retro-teal);
+  margin: 2rem 0 1rem;
+}
+.sans-script .enonces {
+  line-height: 1.6;
+  padding-left: 1.5rem;
+}
+.sans-script .enonces li { margin-bottom: 0.75rem; }
+
+/* ---------- Pied de page ---------- */
+.retro-footer {
+  background: var(--retro-ink);
+  border-top: 3px solid var(--retro-teal);
+  border-radius: 0 0 20px 4px;
+  padding: 2.5rem 1.5rem;
+  color: var(--retro-paper);
+  text-align: center;
+}
+.retro-footer-ornament {
+  color: var(--retro-teal);
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+.retro-footer-credit {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+}
+.retro-footer-licence {
+  font-size: 0.875rem;
+  color: rgba(242,239,230,0.6);
+  margin: 0;
+}
+.retro-footer-corpus {
+  font-size: 0.875rem;
+  color: rgba(242,239,230,0.6);
+  margin: 0.75rem 0 0;
+}
+.retro-footer-link {
+  color: var(--retro-jaune);    /* jaune admis : uniquement sur fond ink */
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.retro-footer-link:hover { border-bottom-color: var(--retro-jaune); }
+
+/* ---------- Impression ---------- */
+@media print {
+  body {
+    background: none;
+    color: #000;
+  }
+  .page-frame {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    min-height: auto;
+    background: #fff;
+  }
+  .entete { padding-top: 0; }
+  .ornement,
+  .carte summary::after,
+  .profondeur > summary::before,
+  .retro-footer-ornament { display: none; }
+
+
+  .carte {
+    border-color: #000;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  .carte summary { cursor: default; }
+
+  /* Adresses des sources en toutes lettres */
+  .source-titre a::after {
+    content: ' — ' attr(href);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8125rem;
+    word-break: break-all;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .retro-footer {
+    background: #fff;
+    color: #000;
+    border-top: 1px solid #000;
+  }
+  .retro-footer-licence,
+  .retro-footer-corpus { color: #333; }
+  .retro-footer-link { color: #000; }
+}
