@@ -1,7 +1,7 @@
 {
   "meta": {
     "titre": "Ce qu'on entend sur l'IA, ce que les études disent",
-    "cadrage": "Cinq idées qui circulent sur les effets de l'IA sur notre pensée, confrontées aux études disponibles. Chaque carte s'ouvre sur ce qu'on en sait, puis sur ses sources et leurs limites.",
+    "cadrage": "Quatre idées qui circulent sur les effets de l'IA sur notre pensée, confrontées aux études disponibles. Chaque carte s'ouvre sur ce qu'on en sait, puis sur ses sources et leurs limites.",
     "corpus_arrete_le": "2026-08-10",
     "recherche_source": "Enquête documentaire sur 32 sources.",
     "ancrage_run": "carte.md de l'enquête, runs 2026-08-10-nouveau-01, 2026-08-30-ancrage-01 et 2026-08-30-ancrage-02"
@@ -144,63 +144,6 @@
           "acces": "libre",
           "acces_detail": "",
           "limite": "L'effet mesuré est faible et ne se retrouve pas à l'identique sur la seconde tâche testée. Les auteurs déclarent leur hypothèse partiellement soutenue."
-        }
-      ]
-    },
-    {
-      "id": "atrophie_muscle",
-      "type": "lieu_commun",
-      "enonce": "À force de déléguer à l'IA, la pensée critique s'atrophie comme un muscle qu'on n'utilise plus",
-      "verdict": "Des chercheurs appuient cette image sur un texte de 1983 traitant de l'automatisation ; une psychologue la refuse, un esprit et un muscle différant selon elle à bien des égards. Ce qui manque aux deux camps n'est pas une preuve contraire, c'est de l'avoir observé lors d'une expérience à long terme.",
-      "developpement": "Lee et ses collègues, chercheurs de Microsoft Research et de Carnegie Mellon, prennent cette crainte au sérieux. L'inquiétude envers les nouvelles technologies n'est pas sans fondement, écrivent-ils : utilisées sans précaution, elles pourraient détériorer des facultés qu'il faut préserver. Ils s'appuient sur un texte de 1983 signé Lisanne Bainbridge. Mécaniser les tâches routinières et laisser à l'humain la seule gestion des exceptions le prive de l'entraînement régulier de son jugement, et le laisse atrophié, mal préparé quand l'exception survient.\n\nMichelle Miller, professeure de psychologie, refuse cette image : un esprit et un muscle diffèrent de bien des façons, selon elle.\n\nLe point qui tranche vraiment n'est dans aucun des deux camps. Ni l'un ni l'autre n'a observé ce processus se produire sur une personne réelle, dans la durée. L'équipe qui invoque l'atrophie le reconnaît d'ailleurs à sa manière, puisqu'elle précise que son analyse n'établit aucun lien de cause à effet.\n\nReste un critère qui aide à trancher au cas par cas, quelle que soit l'image retenue. Ce qui compte n'est pas la délégation en elle-même mais son objet. L'effort confié à l'outil était-il celui qu'il fallait fournir pour apprendre ce qu'on visait ?",
-      "ancrage": [
-        "S02",
-        "S31a",
-        "S31b",
-        "S43",
-        "S44",
-        "S45",
-        "S46",
-        "S47",
-        "S48",
-        "S49"
-      ],
-      "sources": [
-        {
-          "titre": "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers",
-          "auteur": "Lee (Carnegie Mellon), Sarkar, Tankelevitch, Drosos, Rintel, Banks, Wilson (Microsoft Research)",
-          "annee": "2025",
-          "publie_dans": "Conférence CHI, ACM",
-          "url": "https://dl.acm.org/doi/10.1145/3706598.3713778",
-          "etat": "publie",
-          "etat_detail": "",
-          "acces": "bloque",
-          "acces_detail": "Version de l'éditeur inaccessible lors de l'enquête. Une copie est déposée par l'un des auteurs.",
-          "limite": "Le passage sur l'automatisation et le muscle atrophié est un argument d'introduction appuyé sur une référence de 1983, non un résultat de leur propre enquête. Celle-ci reste déclarative, et ses auteurs précisent qu'elle n'établit pas de causalité."
-        },
-        {
-          "titre": "Cognitive Offloading, Cognitive Abilities, and AI",
-          "auteur": "Michelle Miller, professeure de psychologie",
-          "annee": "2025",
-          "publie_dans": "Substack, billet personnel",
-          "url": "https://michellemillerphd.substack.com/p/cognitive-offloading-cognitive-abilities",
-          "etat": "non_valide",
-          "etat_detail": "Billet personnel, jamais contrôlé par d'autres chercheurs.",
-          "acces": "libre",
-          "acces_detail": "",
-          "limite": "Commentaire d'une spécialiste sur le travail d'un tiers, pas une recherche nouvelle."
-        },
-        {
-          "titre": "Cognitive Offloading",
-          "auteur": "Evan F. Risko (Université de Waterloo), Sam J. Gilbert (University College London)",
-          "annee": "2016",
-          "publie_dans": "Trends in Cognitive Sciences",
-          "url": "https://doi.org/10.1016/j.tics.2016.07.002",
-          "etat": "publie",
-          "etat_detail": "",
-          "acces": "payant",
-          "acces_detail": "Version de l'éditeur sous abonnement. Le manuscrit accepté est déposé en libre accès par les auteurs.",
-          "limite": "Article de synthèse théorique, pas une étude empirique, et antérieur à l'IA générative."
         }
       ]
     },
